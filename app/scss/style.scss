@@ -172,40 +172,6 @@
         flex-wrap: wrap;
         padding-left: 25px;
     }
-    &__item-1,
-    &__item-3 {
-        &::before,
-        &::after {
-            content: '';
-            position: absolute;
-            background-position: 0 0;
-        }
-    }
-    &__item-1 {
-        &::before {
-            height: 48px;
-            width: 245px;
-            background-image: url(../images/line-1.svg);
-            right: -56px;
-            top: 31px;
-        }
-    }
-    &__item-3 {
-        &::before {
-            background-image: url(../images/line-3.svg);
-            width: 254px;
-            height: 40px;
-            top: 50px;
-            right: -55px;
-        }
-        &::after {
-            background-image: url(../images/line-2.svg);
-            width: 463px;
-            height: 62px;
-            top: -70px;
-            right: -54px;
-        }
-    }
     &__item {
         margin-bottom: 100px;
         display: flex;
@@ -214,6 +180,46 @@
         &:nth-child(even) {
             top: 25px;
             margin-left: 40px;
+        }
+        &:nth-child(3) {
+            margin-left: 30px;
+        }
+        &:nth-child(4) {
+            margin-left: 60px;
+        }
+        &:first-child,
+        &:nth-child(3) {
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                background-position: 0 0;
+            }
+        }
+        &:first-child {
+            &::before {
+                height: 48px;
+                width: 245px;
+                background-image: url(../images/line-1.svg);
+                right: -56px;
+                top: 31px;
+            }
+        }
+        &:nth-child(3) {
+            &::before {
+                background-image: url(../images/line-3.svg);
+                width: 254px;
+                height: 43px;
+                top: 50px;
+                right: -55px;
+            }
+            &::after {
+                background-image: url(../images/line-2.svg);
+                width: 463px;
+                height: 62px;
+                top: -70px;
+                right: -54px;
+            }
         }
     }
     &__num {
@@ -253,4 +259,93 @@
 }
 
 // end benefits
+// start specification
+.specification {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 25px;
+    }
+    &__item--center {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    &__box {
+        width: 280px;
+        position: relative;
+        margin-top: 10px;
+        &:before {
+            content: '';
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+        }
+    }
+    &__box-2 {
+        margin-top: 140px;
+    }
+    &__box-4 {
+        margin-top: 160px;
+    }
+    &__box-1::before {
+        background-image: url(../images/pointer-1.svg);
+        width: 229px;
+        height: 114px;
+        left: 249px;
+        top: 16px;
+    }
+    &__box-2::before {
+        background-image: url(../images/pointer-2.svg);
+        width: 345px;
+        height: 81px;
+        left: 263px;
+        top: -65px;
+    }
+    &__box-3::before {
+        background-image: url(../images/pointer-3.svg);
+        width: 258px;
+        height: 103px;
+        left: -280px;
+        top: 14px;
+    }
+    &__box-4::before {
+        background-image: url(../images/pointer-4.svg);
+        width: 124px;
+        height: 79px;
+        left: -139px;
+        top: -62px;
+    }
+    &__box-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+    &__box-text {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+// end specification
+// start questions 
+.questions {
+    &__items {
+        max-width: 757px;
+    }
+    &__item {}
+    &__item-title {
+        max-width: 690px;
+        line-height: 28px;
+        font-size: 21px;
+        @extend %ubuntu-medium;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: rgba(#fff, .8);
+    }
+}
+
+// end questions
 @import "media";
