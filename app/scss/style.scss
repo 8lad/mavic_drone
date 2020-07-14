@@ -335,17 +335,133 @@
 .questions {
     &__items {
         max-width: 757px;
+        padding-bottom: 15px;
     }
-    &__item {}
-    &__item-title {
+    &__item {
+        background-color: rgba(0, 0, 0, 0.3);
         max-width: 690px;
+        margin-bottom: 5px;
+        position: relative;
+        &:nth-child(3)::before {
+            content: '';
+            position: absolute;
+            width: 319px;
+            height: 125px;
+            top: -33px;
+            right: -386px;
+            background-image: url(../images/questions-bg.png);
+        }
+    }
+    &__item-title {
         line-height: 28px;
         font-size: 21px;
         @extend %ubuntu-medium;
-        background-color: rgba(0, 0, 0, 0.3);
         color: rgba(#fff, .8);
+        padding: 20px 10px 24px 40px;
+        position: relative;
+        cursor: pointer;
+        &::after {
+            content: url(../images/accordion-arrow.svg);
+            position: absolute;
+            width: 72px;
+            height: 67px;
+            background-color: #fff;
+            top: 0;
+            right: -72px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__item-text {
+        padding: 0 5px 0 50px;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: all .4s;
+        overflow: hidden;
+    }
+    &__item.questions__item--active {
+        .questions__item-title::after {
+            transform: rotate(180deg);
+        }
+        .questions__item-text {
+            visibility: visible;
+            height: auto;
+            opacity: 1;
+            padding: 0 5px 75px 50px;
+        }
     }
 }
 
 // end questions
+// start contacts
+.contacts {
+    &__inner {
+        display: flex;
+    }
+    &__info {
+        width: 240px;
+        margin-right: 60px;
+    }
+    &__info-box {
+        margin-bottom: 30px;
+    }
+    &__info-title {
+        line-height: 24px;
+        font-size: 21px;
+        @extend %ubuntu-bold;
+        margin: 0 0 13px;
+    }
+    &__info-phone,
+    &__info-email {
+        font-size: 15px;
+        line-height: 18px;
+    }
+    &__info-email:hover {
+        text-decoration: underline;
+    }
+    &__form {
+        width: 570px;
+        margin-right: 106px;
+    }
+    &__form-title {
+        line-height: 24px;
+        font-size: 21px;
+        @extend %ubuntu-bold;
+        margin: 0 0 13px;
+    }
+    &__form-text {
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0 0 12px;
+    }
+    &__form-line {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__form-input {
+        width: 49%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    &__form-textarea {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: rgba(255, 255, 255, 0.4);
+    }
+    &__form-btn {}
+}
+
+// end contacts
+// start footer
+.footer {
+    background-color: transparent;
+}
+
+// end footer
 @import "media";
