@@ -402,6 +402,7 @@
 .contacts {
     &__inner {
         display: flex;
+        padding-left: 25px;
     }
     &__info {
         width: 240px;
@@ -442,25 +443,80 @@
     &__form-line {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    &__form-input,
+    &__form-textarea {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 13px;
+        line-height: 15px;
+        @extend %ubuntu-regular;
+        border: none;
+        padding: 15px;
+        color: #fff;
+        &::placeholder {
+            color: rgba(#fff, .4);
+        }
     }
     &__form-input {
         width: 49%;
-        background-color: rgba(0, 0, 0, 0.5);
-        border: none;
-        color: rgba(255, 255, 255, 0.4);
     }
     &__form-textarea {
-        background-color: rgba(0, 0, 0, 0.5);
-        border: none;
-        color: rgba(255, 255, 255, 0.4);
+        min-height: 144px;
+        width: 100%;
+        resize: none;
+        margin-bottom: 20px;
     }
-    &__form-btn {}
+    &__form-btn {
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.09em;
+        @extend %ubuntu-bold;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        padding: 9px 15px;
+        color: #fff;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all .3s;
+        &:hover {
+            color: #000;
+            background-color: #fff;
+        }
+    }
+    &__social-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__social-item {
+        margin: 14px 0;
+    }
+    &__social-link {
+        opacity: .5;
+        transition: all .3s;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }
 
 // end contacts
 // start footer
 .footer {
     background-color: transparent;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 32px;
+    &__copy {
+        text-align: right;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba(#fff, .64);
+    }
 }
 
 // end footer
