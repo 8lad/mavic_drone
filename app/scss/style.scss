@@ -47,7 +47,17 @@
         &+.menu__list-item {
             padding-left: 20px;
         }
+        &.active a {
+            text-decoration: underline;
+        }
     }
+    &__list-phone {
+        display: none;
+    }
+}
+
+.menu__btn {
+    display: none;
 }
 
 //end header
@@ -145,7 +155,7 @@
         border: none;
         background-color: #fff;
         position: absolute;
-        bottom: -45px;
+        bottom: -48px;
         right: 0;
         cursor: pointer;
         z-index: 5;
